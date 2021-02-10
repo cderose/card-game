@@ -1,5 +1,33 @@
 //document.getElementById('test').src='/images/cards/2H.png'
 
+function flipCard(key){
+  var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
+  var randomSuit = Math.floor(Math.random() * 4)
+  var randomCard = path + randomCardNumber + suits[randomSuit];
+  switch (key) {
+    case "Turn Card":
+      if (rcard < 5){
+        console.log(rcard)
+        document.getElementsByClassName('rcard')[rcard].src=randomCard
+        rcard += 1;
+        console.log(randomCard)
+      } else {
+        console.log("Game over!")
+      }
+      break;
+    case "Pass":
+    if (bcard < 5){
+      console.log(rcard)
+      document.getElementsByClassName('bcard')[bcard].src=randomCard
+      bcard += 1;
+      console.log(randomCard)
+    } else {
+      console.log("Game over!")
+    }
+    break;
+  }
+}
+
 // var path = 'images/cards/',
 // cards = [
 //   '2C.png', '2D.png', '2H.png', '2S.png',
