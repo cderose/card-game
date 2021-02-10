@@ -1,0 +1,56 @@
+body {
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 3rem;
+  text-align: center;
+  background-color: green;
+  margin-left: 40px;
+}
+
+h1 {
+  margin: 0 0 45px;
+}
+
+img {
+  height: 280px;
+  width: 180px;
+  margin: 0 5px;
+}
+
+p {
+  text-align: left;
+  margin: 5px 0 10px;
+}
+
+.card-wrapper {
+  margin: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:75%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+/* LAYOUT */
+/* .red-column, .blue-column {
+  background-size: 100%;
+  height: 280px;
+  width: 250px;
+  margin: 0 0 30px;
+} */
+
+/* .red-column {
+  background-image: url("images/red-cards.jpg");
+}
+
+.blue-column {
+  background-image: url("images/blue-cards.jpg");
+} */
