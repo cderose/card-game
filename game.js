@@ -1,8 +1,5 @@
 var path = 'images/cards/',
 suits = ['C.png', 'D.png', 'H.png', 'S.png']
-var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
-var randomSuit = Math.floor(Math.random() * 4)
-var randomCard = path + randomCardNumber + suits[randomSuit];
 
 // CLICK A BUTTON TO PLAY
 for (i=0; i < document.querySelectorAll(".button").length; i++) {
@@ -13,6 +10,9 @@ for (i=0; i < document.querySelectorAll(".button").length; i++) {
 }
 
 function flipCard(key){
+  var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
+  var randomSuit = Math.floor(Math.random() * 4)
+  var randomCard = path + randomCardNumber + suits[randomSuit];
   switch (key) {
     case "Turn Card":
       document.getElementsByClassName('rcard')[0].src=randomCard
