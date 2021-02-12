@@ -21,6 +21,18 @@ for (i = 0; i < document.querySelectorAll(".button").length; i++) {
   })
 }
 
+function humanWins() {
+  setTimeout(function() {
+    document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+}
+
+function rWrongGuess() {
+  setTimeout(function() {
+    document.getElementsByClassName('rcard')[rcard].src = "images/red-cards.jpg";
+    compTurn();
+  }, 1500);
+}
+
 function humanHigher() {
   var randomCard = drawnCard();
   document.getElementsByClassName('rcard')[rcard].src = randomCard[0];
@@ -30,14 +42,10 @@ function humanHigher() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      setTimeout(function() {
-        document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+      humanWins();
     }
   } else {
-    setTimeout(function() {
-      document.getElementsByClassName('rcard')[rcard].src = "images/red-cards.jpg";
-      compTurn();
-    }, 1500);
+    rWrongGuess();
   }
 }
 
@@ -50,14 +58,10 @@ function humanLower() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      setTimeout(function() {
-        document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+      humanWins();
     }
   } else {
-    setTimeout(function() {
-      document.getElementsByClassName('rcard')[rcard].src = "images/red-cards.jpg";
-      compTurn();
-    }, 1500);
+    rWrongGuess();
   }
 }
 
@@ -124,8 +128,6 @@ function compLower() {
     }, 1500);
   }
 }
-
-
 
 
 // START AND END SETTINGS //
