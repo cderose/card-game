@@ -32,8 +32,7 @@ function humanHigher() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      alert("You win!");
-      endGame();
+      setTimeout(function(){alert("You win!"); endGame();}, 1000);
     }
   } else {
     setTimeout(function() {
@@ -52,8 +51,7 @@ function humanLower() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      alert("You win!");
-      endGame();
+      setTimeout(function(){alert("You win!"); endGame();}, 1000);
     }
   } else {
     setTimeout(function() {
@@ -88,8 +86,7 @@ function compHigher() {
          document.getElementById('comp-higher').style.display = "none";
          compTurn();
        } else {
-         alert("Computer wins!");
-         endGame();
+         setTimeout(function(){alert("You win!"); endGame();}, 1000);
        }
      }, 1500);
   } else {
@@ -113,8 +110,7 @@ function compLower() {
          document.getElementById('comp-lower').style.display = "none";
          compTurn();
        } else {
-         alert("Computer wins!");
-         endGame();
+         setTimeout(function(){alert("You win!"); endGame();}, 1000);
        }
      }, 1500);
   } else {
