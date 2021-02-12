@@ -1,3 +1,5 @@
+if (buttonText == "Higher Card" || buttonText == "Lower Card")  {
+
 // //document.getElementById('test').src='/images/cards/2H.png'
 //
 // function flipCard(key){
