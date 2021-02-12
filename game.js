@@ -30,7 +30,8 @@ function humanHigher() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      setTimeout(function(){alert("You win!"); endGame();}, 1000);
+      setTimeout(function() {
+        document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
     }
   } else {
     setTimeout(function() {
@@ -49,7 +50,8 @@ function humanLower() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
-      setTimeout(function(){alert("You win!"); endGame();}, 1000);
+      setTimeout(function() {
+        document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
     }
   } else {
     setTimeout(function() {
@@ -84,7 +86,8 @@ function compHigher() {
          document.getElementById('comp-higher').style.display = "none";
          compTurn();
        } else {
-         setTimeout(function(){alert("You win!"); endGame();}, 1000);
+         setTimeout(function() {
+           document.getElementsByClassName('computer-wins')[0].style.display = "inline-block"; endGame();}, 1000);
        }
      }, 1500);
   } else {
@@ -108,7 +111,8 @@ function compLower() {
          document.getElementById('comp-lower').style.display = "none";
          compTurn();
        } else {
-         setTimeout(function(){alert("You win!"); endGame();}, 1000);
+         setTimeout(function() {
+           document.getElementsByClassName('computer-wins')[0].style.display = "inline-block"; endGame();}, 1000);
        }
      }, 1500);
   } else {
@@ -124,44 +128,52 @@ function compLower() {
 
 
 
-  // START AND END SETTINGS //
-  function drawnCard() {
-    var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
-    var randomSuit = Math.floor(Math.random() * 4);
-    var randomCard = path + randomCardNumber + suits[randomSuit];
-    return [randomCard, randomCardNumber];
-  }
+// START AND END SETTINGS //
+document.querySelector('button[type="human-wins"]').addEventListener("click", function(){
+	document.getElementsByClassName('human-wins')[0].style.display = "none";
+})
 
-  function startGame() {
-    document.getElementsByClassName('new-game')[0].style.display = "none";
-    document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
-    document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
-    // document.getElementsByClassName('pass-turn')[0].style.display = "inline-block";
-    rcard = 0;
-    bcard = 0;
-    for (i = 0; i < document.querySelectorAll(".rcard").length; i++) {
-      document.querySelectorAll(".rcard")[i].src = "images/red-cards.jpg";
-    }
-    for (i = 0; i < document.querySelectorAll(".bcard").length; i++) {
-      document.querySelectorAll(".bcard")[i].src = "images/blue-cards.jpg";
-    }
-    var randomRedCard = drawnCard();
+document.querySelector('button[type="computer-wins"]').addEventListener("click", function(){
+	document.getElementsByClassName('computer-wins')[0].style.display = "none";
+})
 
-    // draw starting cards
-    document.getElementsByClassName('rcard')[rcard].src = randomRedCard[0];
-    rcard += 1;
-    lastRed = randomRedCard[1]
-    var randomBlueCard = drawnCard();
-    document.getElementsByClassName('bcard')[bcard].src = randomBlueCard[0];
-    bcard += 1;
-    lastBlue = randomBlueCard[1]
-  }
+function drawnCard() {
+  var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
+  var randomSuit = Math.floor(Math.random() * 4);
+  var randomCard = path + randomCardNumber + suits[randomSuit];
+  return [randomCard, randomCardNumber];
+}
 
-  function endGame() {
-    document.getElementById('comp-higher').style.display = "none"
-    document.getElementById('comp-lower').style.display = "none"
-    document.getElementsByClassName('higher-card')[0].style.display = "none";
-    document.getElementsByClassName('lower-card')[0].style.display = "none";
-    // document.getElementsByClassName('pass-turn')[0].style.display = "none";
-    document.getElementsByClassName('new-game')[0].style.display = "inline-block";
+function startGame() {
+  document.getElementsByClassName('new-game')[0].style.display = "none";
+  document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
+  document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
+  // document.getElementsByClassName('pass-turn')[0].style.display = "inline-block";
+  rcard = 0;
+  bcard = 0;
+  for (i = 0; i < document.querySelectorAll(".rcard").length; i++) {
+    document.querySelectorAll(".rcard")[i].src = "images/red-cards.jpg";
   }
+  for (i = 0; i < document.querySelectorAll(".bcard").length; i++) {
+    document.querySelectorAll(".bcard")[i].src = "images/blue-cards.jpg";
+  }
+  var randomRedCard = drawnCard();
+
+  // draw starting cards
+  document.getElementsByClassName('rcard')[rcard].src = randomRedCard[0];
+  rcard += 1;
+  lastRed = randomRedCard[1]
+  var randomBlueCard = drawnCard();
+  document.getElementsByClassName('bcard')[bcard].src = randomBlueCard[0];
+  bcard += 1;
+  lastBlue = randomBlueCard[1]
+}
+
+function endGame() {
+  document.getElementById('comp-higher').style.display = "none"
+  document.getElementById('comp-lower').style.display = "none"
+  document.getElementsByClassName('higher-card')[0].style.display = "none";
+  document.getElementsByClassName('lower-card')[0].style.display = "none";
+  // document.getElementsByClassName('pass-turn')[0].style.display = "none";
+  document.getElementsByClassName('new-game')[0].style.display = "inline-block";
+}
