@@ -38,7 +38,11 @@ p {
   width: 300px;
 }
 
-/* CARD TABLE */
+.new-game {
+  display: none;
+}
+
+/* CARD TABLE LAYOUT */
 .card-wrapper {
   background-color: #107A42;
   padding: 10px;
