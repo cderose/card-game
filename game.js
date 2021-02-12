@@ -66,17 +66,18 @@ function compTurn() {
   document.getElementsByClassName('lower-card')[0].style.display = "none";
   var compChoice = Math.floor(Math.random() * 2);
   if (compChoice === 0) {
+    document.getElementById('comp-higher').style.display = "inline-block";
     compHigher();
   } else {
+    document.getElementById('comp-lower').style.display = "inline-block";
     compLower();
   }
 }
 
 function compHigher() {
-  document.getElementById('comp-higher').style.display = "inline-block";
   var randomCard = drawnCard();
+  console.log(lastBlue, randomCard[1]);
   document.getElementsByClassName('bcard')[bcard].src = randomCard[0];
-  console.log(lastBlue);
   if (randomCard[1] > lastBlue) {
      setTimeout(function(){
        if (bcard < 4) {
@@ -97,12 +98,10 @@ function compHigher() {
     }, 1500);
   }
 }
-
 function compLower() {
-  document.getElementById('comp-lower').style.display = "inline-block";
   var randomCard = drawnCard();
+  console.log(lastBlue, randomCard[1]);
   document.getElementsByClassName('bcard')[bcard].src = randomCard[0];
-  console.log(lastBlue);
   if (randomCard[1] < lastBlue) {
      setTimeout(function(){
        if (bcard < 4) {
@@ -123,6 +122,7 @@ function compLower() {
     }, 1500);
   }
 }
+
 
 
 
