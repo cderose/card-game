@@ -26,7 +26,7 @@ function humanWins() {
     document.getElementsByClassName('human-wins')[0].style.display = "inline-block"; endGame();}, 1000);
 }
 
-function rWrongGuess() {
+function hWrongGuess() {
   setTimeout(function() {
     document.getElementsByClassName('rcard')[rcard].src = "images/red-cards.jpg";
     compTurn();
@@ -44,7 +44,7 @@ function humanHigher() {
       humanWins();
     }
   } else {
-    rWrongGuess();
+    hWrongGuess();
   }
 }
 
@@ -59,7 +59,7 @@ function humanLower() {
       humanWins();
     }
   } else {
-    rWrongGuess();
+    hWrongGuess();
   }
 }
 
@@ -76,10 +76,16 @@ function compTurn() {
   }
 }
 
-function bWrongGuess(){
+function compWins() {
+  setTimeout(function() {
+    document.getElementsByClassName('computer-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+}
+
+function cWrongGuess(){
   setTimeout(function() {
     document.getElementsByClassName('bcard')[bcard].src = "images/blue-cards.jpg";
     document.getElementById('comp-higher').style.display = "none";
+    document.getElementById('comp-lower').style.display = "none";
     document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
     document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
   }, 1500);
@@ -96,14 +102,14 @@ function compHigher() {
          document.getElementById('comp-higher').style.display = "none";
          compTurn();
        } else {
-         setTimeout(function() {
-           document.getElementsByClassName('computer-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+         compWins();
        }
      }, 1500);
   } else {
-    bWrongGuess();
+    cWrongGuess();
   }
 }
+
 function compLower() {
   var randomCard = drawnCard();
   document.getElementsByClassName('bcard')[bcard].src = randomCard[0];
@@ -115,15 +121,13 @@ function compLower() {
          document.getElementById('comp-lower').style.display = "none";
          compTurn();
        } else {
-         setTimeout(function() {
-           document.getElementsByClassName('computer-wins')[0].style.display = "inline-block"; endGame();}, 1000);
+         compWins();
        }
      }, 1500);
   } else {
-    bWrongGuess();
+    cWrongGuess();
   }
 }
-
 
 // START AND END SETTINGS //
 document.querySelector('button[type="human-wins"]').addEventListener("click", function(){
