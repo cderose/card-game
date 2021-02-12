@@ -36,7 +36,6 @@ function rWrongGuess() {
 function humanHigher() {
   var randomCard = drawnCard();
   document.getElementsByClassName('rcard')[rcard].src = randomCard[0];
-  //console.log(lastRed);
   if (randomCard[1] > lastRed) {
     if (rcard < 4) {
       rcard += 1;
@@ -52,7 +51,6 @@ function humanHigher() {
 function humanLower() {
   var randomCard = drawnCard();
   document.getElementsByClassName('rcard')[rcard].src = randomCard[0];
-  //console.log(lastRed);
   if (randomCard[1] < lastRed) {
     if (rcard < 4) {
       rcard += 1;
@@ -78,9 +76,17 @@ function compTurn() {
   }
 }
 
+function bWrongGuess(){
+  setTimeout(function() {
+    document.getElementsByClassName('bcard')[bcard].src = "images/blue-cards.jpg";
+    document.getElementById('comp-higher').style.display = "none";
+    document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
+    document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
+  }, 1500);
+}
+
 function compHigher() {
   var randomCard = drawnCard();
-  console.log(lastBlue, randomCard[1]);
   document.getElementsByClassName('bcard')[bcard].src = randomCard[0];
   if (randomCard[1] > lastBlue) {
      setTimeout(function(){
@@ -95,17 +101,11 @@ function compHigher() {
        }
      }, 1500);
   } else {
-    setTimeout(function() {
-      document.getElementsByClassName('bcard')[bcard].src = "images/blue-cards.jpg";
-      document.getElementById('comp-higher').style.display = "none";
-      document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
-      document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
-    }, 1500);
+    bWrongGuess();
   }
 }
 function compLower() {
   var randomCard = drawnCard();
-  console.log(lastBlue, randomCard[1]);
   document.getElementsByClassName('bcard')[bcard].src = randomCard[0];
   if (randomCard[1] < lastBlue) {
      setTimeout(function(){
@@ -120,12 +120,7 @@ function compLower() {
        }
      }, 1500);
   } else {
-    setTimeout(function() {
-      document.getElementsByClassName('bcard')[bcard].src = "images/blue-cards.jpg";
-      document.getElementById('comp-lower').style.display = "none";
-      document.getElementsByClassName('higher-card')[0].style.display = "inline-block";
-      document.getElementsByClassName('lower-card')[0].style.display = "inline-block";
-    }, 1500);
+    bWrongGuess();
   }
 }
 
