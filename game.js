@@ -32,6 +32,7 @@ function humanHigher() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
+      alert("You win!");
       endGame();
     }
   } else {
@@ -51,6 +52,7 @@ function humanLower() {
       rcard += 1;
       lastRed = randomCard[1];
     } else {
+      alert("You win!");
       endGame();
     }
   } else {
@@ -67,10 +69,10 @@ function compTurn() {
   var compChoice = Math.floor(Math.random() * 2);
   if (compChoice === 0) {
     document.getElementById('comp-higher').style.display = "inline-block";
-    compHigher();
+    setTimeout(function(){compHigher();}, 1000);
   } else {
     document.getElementById('comp-lower').style.display = "inline-block";
-    compLower();
+    setTimeout(function(){compLower();;}, 1000);
   }
 }
 
@@ -86,6 +88,7 @@ function compHigher() {
          document.getElementById('comp-higher').style.display = "none";
          compTurn();
        } else {
+         alert("Computer wins!");
          endGame();
        }
      }, 1500);
@@ -110,6 +113,7 @@ function compLower() {
          document.getElementById('comp-lower').style.display = "none";
          compTurn();
        } else {
+         alert("Computer wins!");
          endGame();
        }
      }, 1500);
