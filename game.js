@@ -10,7 +10,7 @@ for (i=0; i < document.querySelectorAll(".button").length; i++) {
     if (buttonText == "Turn Card"){
       turnCard(buttonText);
     } else if (buttonText == "Pass Turn"){
-      passTurn(buttonText)
+      compTurn(buttonText)
     } else {
       startGame();
     }
@@ -25,33 +25,37 @@ function turnCard(){
     document.getElementsByClassName('rcard')[rcard].src=randomCard;
     rcard += 1;
   } else {
+    console.log("ending game");
     document.getElementsByClassName('rcard')[rcard].src=randomCard;
     endGame();
   }
 }
 
-function passTurn(){
+function compTurn(){
+  document.getElementById('span').style.display = "inline-block";
   document.getElementsByClassName('turn-card')[0].style.display = "none";
   document.getElementsByClassName('pass-turn')[0].style.display = "none";
   var randomCardNumber = Math.floor(Math.random() * (15 - 2) + 2);
   var randomSuit = Math.floor(Math.random() * 4);
   var randomCard = path + randomCardNumber + suits[randomSuit];
-  if (bcard < 4){
-    document.getElementsByClassName('bcard')[bcard].src=randomCard;
-    bcard += 1;
-    compChoice();
-  } else {
-    document.getElementsByClassName('bcard')[bcard].src=randomCard;
-    endGame();
-  }
+  setTimeout(function(){
+    if (bcard < 4){
+      document.getElementsByClassName('bcard')[bcard].src=randomCard;
+      bcard += 1;
+      compChoice();
+    } else {
+      document.getElementsByClassName('bcard')[bcard].src=randomCard;
+      endGame();
+    }; }, 1500);
 }
 
 function compChoice() {
   var compRandom = Math.floor(Math.random() * 2);
   if (compRandom === 0) {
     setTimeout(function(){
-      passTurn(); }, 3000);
+      compTurn(); }, 1500);
   } else {
+    document.getElementById('span').style.display = "none";
     document.getElementsByClassName('turn-card')[0].style.display = "inline-block";
     document.getElementsByClassName('pass-turn')[0].style.display = "inline-block";
   }
@@ -62,8 +66,11 @@ function compChoice() {
 
 // END GAME AND START OVER //
 function endGame(){
-  document.getElementsByClassName('new-game')[0].style.display = "inline-block";
+  document.getElementById('span').style.display = "none"
+  document.getElementsByClassName('turn-card')[0].style.display = "none";
   document.getElementsByClassName('pass-turn')[0].style.display = "none";
+  document.getElementsByClassName('new-game')[0].style.display = "inline-block";
+
 }
 
 function startGame(){

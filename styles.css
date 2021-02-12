@@ -32,13 +32,18 @@ p {
   margin: 5px 0 10px;
 }
 
-/* Title */
 .shark {
   height: 110px;
   width: 300px;
 }
 
 .new-game {
+  display: none;
+}
+
+span {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
   display: none;
 }
 
