@@ -5,23 +5,13 @@ body {
   text-align: center;
 }
 
-button {
-  background-color: #F2F2F2;
-  border-radius: 10px;
-  font-family: 'Source Code Pro', monospace;
-  line-height: 1.65;
-  outline:none;
-}
-
-button:hover {
-  background-color: #CCCCCC;
-}
 
 h1 {
   margin: 0 0 45px;
 }
 
 img {
+  border-radius: 25px;
   height: 260px;
   width: 165px;
 }
@@ -37,7 +27,19 @@ p {
   width: 300px;
 }
 
-/* BUTTONS */
+/****************** BUTTONS *******************/
+button {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  font-family: 'Source Code Pro', monospace;
+  line-height: 1.65;
+  outline:none;
+}
+
+button:hover {
+  background-color: #CCCCCC;
+}
+
 .higher-card {
   display: none;
 }
@@ -50,13 +52,29 @@ p {
   display: none;
 }
 
+.human-wins, .computer-wins {
+  background-color: #F2F2F2;
+  background-image: url("images/confetti.png");
+  background-size: 600px 400px;
+  background-repeat: no-repeat;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+  display: none;
+  position: fixed;
+  left: 29%;
+  /* outline: .7rem dotted #F3C015; */
+  height: 400px;
+  width: 600px;
+  z-index: 1;
+}
+
 span {
   font-family: 'Source Code Pro', monospace;
   font-size: 1rem;
   display: none;
 }
 
-/* CARD TABLE LAYOUT */
+/****************** GAME BOARD LAYOUT *******************/
 .card-wrapper {
   background-color: #107A42;
   padding: 10px;

@@ -5,8 +5,6 @@ var lastBlue = 0
 var path = 'images/cards/'
 suits = ['C.png', 'D.png', 'H.png', 'S.png']
 
-
-
 // GAMEPLAY //
 for (i = 0; i < document.querySelectorAll(".button").length; i++) {
   document.querySelectorAll(".button")[i].addEventListener("click", function() {
