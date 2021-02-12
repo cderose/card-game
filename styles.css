@@ -32,13 +32,31 @@ p {
   margin: 5px 0 10px;
 }
 
-/* Title */
 .shark {
   height: 110px;
   width: 300px;
 }
 
-/* CARD TABLE */
+/* BUTTONS */
+.higher-card {
+  display: none;
+}
+
+.lower-card {
+  display: none;
+}
+
+.pass-turn {
+  display: none;
+}
+
+span {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  display: none;
+}
+
+/* CARD TABLE LAYOUT */
 .card-wrapper {
   background-color: #107A42;
   padding: 10px;
