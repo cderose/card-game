@@ -1,9 +1,20 @@
 body {
+  background-color: #71ADBC;
   font-family: 'Fascinate Inline', cursive;
   font-size: 3rem;
   text-align: center;
-  background-color: green;
-  margin-left: 40px;
+}
+
+button {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  font-family: 'Source Code Pro', monospace;
+  line-height: 1.65;
+  outline:none;
+}
+
+button:hover {
+  background-color: #CCCCCC;
 }
 
 h1 {
@@ -11,24 +22,39 @@ h1 {
 }
 
 img {
-  height: 280px;
-  width: 180px;
+  height: 260px;
+  width: 165px;
 }
 
 p {
+  color: #1C1C1C;
   text-align: left;
   margin: 5px 0 10px;
 }
 
+/* Title */
+.shark {
+  height: 110px;
+  width: 300px;
+}
+
+/* CARD TABLE */
 .card-wrapper {
-  margin: 15px;
+  background-color: #107A42;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 50px;
+  outline: .7rem dotted #DFE6E7;
+  width:85%;
+  /* margin: 15px;
+  width: 1000px; */
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width:75%;
+  width:100%;
 }
 
 .column {
