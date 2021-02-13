@@ -5,23 +5,12 @@ body {
   text-align: center;
 }
 
-button {
-  background-color: #F2F2F2;
-  border-radius: 10px;
-  font-family: 'Source Code Pro', monospace;
-  line-height: 1.65;
-  outline:none;
-}
-
-button:hover {
-  background-color: #CCCCCC;
-}
-
 h1 {
   margin: 0 0 45px;
 }
 
 img {
+  border-radius: 25px;
   height: 260px;
   width: 165px;
 }
@@ -37,17 +26,37 @@ p {
   width: 300px;
 }
 
-/* BUTTONS */
-.higher-card {
+/****************** BUTTONS *******************/
+button {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  font-family: 'Source Code Pro', monospace;
+  line-height: 1.65;
+  outline:none;
+}
+
+button:hover {
+  background-color: #CCCCCC;
+}
+
+.higher-card, .lower-card {
   display: none;
 }
 
-.lower-card {
+.human-wins, .computer-wins {
+  background-color: #F2F2F2;
+  background-image: url("images/confetti.png");
+  background-size: 600px 400px;
+  background-repeat: no-repeat;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
   display: none;
-}
-
-.pass-turn {
-  display: none;
+  position: fixed;
+  left: 29%;
+  /* outline: .7rem dotted #F3C015; */
+  height: 400px;
+  width: 600px;
+  z-index: 1;
 }
 
 span {
@@ -56,7 +65,7 @@ span {
   display: none;
 }
 
-/* CARD TABLE LAYOUT */
+/****************** GAME BOARD LAYOUT *******************/
 .card-wrapper {
   background-color: #107A42;
   padding: 10px;
@@ -64,8 +73,6 @@ span {
   margin-bottom: 50px;
   outline: .7rem dotted #DFE6E7;
   width:85%;
-  /* margin: 15px;
-  width: 1000px; */
 }
 
 .row {
@@ -81,19 +88,3 @@ span {
   flex-basis: 100%;
   flex: 1;
 }
-
-/* LAYOUT */
-/* .red-column, .blue-column {
-  background-size: 100%;
-  height: 280px;
-  width: 250px;
-  margin: 0 0 30px;
-} */
-
-/* .red-column {
-  background-image: url("images/red-cards.jpg");
-}
-
-.blue-column {
-  background-image: url("images/blue-cards.jpg");
-} */

@@ -19,7 +19,8 @@
       <button class="higher-card button">Higher Card</button>
       <button class="lower-card button">Lower Card</button>
       <button class="new-game button">New Game</button>
-      <!-- <button class="pass-turn button">Change Card</button> -->
+      <button type="human-wins" class="human-wins">You Win! </br> Click to return to game.</button>
+      <button type="computer-wins" class="computer-wins">The Computer Wins!</br> Click to return to game.</button>
     </p>
     <div class="row">
       <div class="column">
@@ -49,11 +50,11 @@
       </div>
     </div>
 
+    <!-- bottom row -->
     <p>Computer's Cards
       <span id="comp-higher">I predict higher...</span>
       <span id="comp-lower">I predict lower...</span>
     </p>
-    <!-- bottom row -->
     <div class="row">
       <div class="column">
         <div class="blue-column">
@@ -81,8 +82,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 
   <script src="game.js" charset="utf-8"></script>
