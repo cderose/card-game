@@ -67,12 +67,21 @@ function compTurn() {
   document.getElementsByClassName('higher-card')[0].style.display = "none";
   document.getElementsByClassName('lower-card')[0].style.display = "none";
   var compChoice = Math.floor(Math.random() * 2);
-  if (compChoice === 0) {
+  console.log(lastBlue);
+  if (lastBlue <= 4) {
     document.getElementById('comp-higher').style.display = "inline-block";
     setTimeout(function(){compHigher();}, 1000);
-  } else {
+  } else if (lastBlue >= 11) {
     document.getElementById('comp-lower').style.display = "inline-block";
     setTimeout(function(){compLower();;}, 1000);
+  } else {
+    if (compChoice === 0) {
+      document.getElementById('comp-higher').style.display = "inline-block";
+      setTimeout(function(){compHigher();}, 1000);
+    } else {
+      document.getElementById('comp-lower').style.display = "inline-block";
+      setTimeout(function(){compLower();;}, 1000);
+    }
   }
 }
 
