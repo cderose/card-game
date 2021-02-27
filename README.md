@@ -1,4 +1,4 @@
-This is an in-progress card game I'm building to practice JavaScript. 
+This is an in-progress card game I'm building to practice JavaScript: https://cderose.github.io/card-game/
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
